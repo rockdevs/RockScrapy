@@ -1,5 +1,7 @@
 package connection.abstracts;
 
+import java.io.IOException;
+
 public interface RockScrapy {
-    RockScrapy scan();
+    RockScrapy proceed() throws IOException;
 }
