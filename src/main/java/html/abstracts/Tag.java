@@ -21,7 +21,7 @@ public abstract class Tag {
         this.tagProperty= new TagProperty();
     }
 
-    public abstract void insertIntoTag(Tag subTag);
+    public abstract Tag append(Tag subTag);
 
     public abstract void insertIntoContext(String context);
 }

@@ -11,7 +11,7 @@ public class ClosableTag extends Tag {
 
     public ClosableTag(String tagName, TagProperty tagProperty) {
         super(tagName, tagProperty);
-        subTags.add(new NullTag());
+        this.subTags.add(new NullTag());
     }
 
     public ClosableTag(String tagName, TagProperty tagProperty,Tag subTagContent) {
@@ -25,14 +25,16 @@ public class ClosableTag extends Tag {
         this.context=context;
     }
 
-    public ClosableTag(String html) {
-        super(html);
+    public ClosableTag(String tagname) {
+        super(tagname);
+        this.subTags.add(new NullTag());
     }
 
     @Override
-    public void insertIntoTag(Tag subTag) {
+    public ClosableTag append(Tag subTag) {
         super.tabbedCount++;
         this.subTags.add(subTag);
+        return this;
     }
 
     @Override
@@ -42,7 +44,7 @@ public class ClosableTag extends Tag {
 
     @Override
     public String toString() {
-        return subTagsRefactor();
+        return this.subTagsRefactor();
     }
 
     private String subTagsRefactor(){
@@ -52,6 +54,7 @@ public class ClosableTag extends Tag {
             for (Tag tag:this.subTags){
                 result.append(tag.toString());
             }
+            System.err.println(result.toString());
             return result.toString();
         }else {
             return ("\n"  + "<" + super.tagName + super.tagProperty+">" + context + subTags.get(0) + "\n</" + super.tagName + ">");

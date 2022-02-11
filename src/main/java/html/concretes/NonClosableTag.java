@@ -9,8 +9,9 @@ public class NonClosableTag extends Tag {
     }
 
     @Override
-    public void insertIntoTag(Tag subTag) {
+    public NonClosableTag append(Tag subTag) {
 
+        return this;
     }
 
     @Override
