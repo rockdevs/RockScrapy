@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TagProperty {
+
     private final Map<String,String> properties;
 
     public TagProperty(){

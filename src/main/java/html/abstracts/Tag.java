@@ -4,6 +4,7 @@ import html.concretes.TagProperty;
 
 
 public abstract class Tag {
+    protected int tabbedCount = 0;
     protected String tagName;
     protected TagProperty tagProperty;
 
