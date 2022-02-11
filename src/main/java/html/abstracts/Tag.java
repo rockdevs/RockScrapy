@@ -15,7 +15,7 @@ public abstract class Tag {
 
     public Tag(String tagName){
         this.tagName=tagName;
-        this.tagProperty= NullValueGenerator.getEmptyProperty();
+        this.tagProperty= new TagProperty();
     }
 
     public abstract void insertIntoTag(Tag subTag);

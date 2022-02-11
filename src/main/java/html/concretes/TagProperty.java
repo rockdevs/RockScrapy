@@ -23,7 +23,7 @@ public class TagProperty {
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder("");
         for (String name: properties.keySet()){
-            stringBuilder.append(" " + name + "=\""+properties.get(name)+"\" ");
+            stringBuilder.append(" " + name + "=\""+properties.get(name)+"\"");
         }
         return stringBuilder.toString();
     }
