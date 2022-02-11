@@ -15,10 +15,20 @@ public class TestMain {
         TagProperty property = new TagProperty();
         property.insert("name","propertyName");
         property.insert("value","con-as-material");
-        Tag html = new ClosableTag("html");
-        Tag div = new ClosableTag("div",property);
 
-        html.insertIntoTag(div);
+        TagProperty propertyClassMain = new TagProperty();
+        propertyClassMain.insert("name","Class-asdd");
+        propertyClassMain.insert("value","omni122");
+
+        Tag html = new ClosableTag("html");
+        Tag body = new ClosableTag("body");
+        Tag classT = new ClosableTag("class",property);
+        Tag classMain = new ClosableTag("div",propertyClassMain);
+
+        classT.insertIntoTag(classMain);
+        body.insertIntoTag(classT);
+        html.insertIntoTag(body);
         System.out.println(html.toString());
+
     }
 }

@@ -3,8 +3,8 @@ package html.concretes;
 import html.abstracts.Tag;
 
 public class ClosableTag extends Tag {
-    private Tag subTagContent;
-    private String context;
+    private Tag subTagContent = new NullTag();
+    private String context = "";
 
     public ClosableTag(String tagName, TagProperty tagProperty) {
         super(tagName, tagProperty);
@@ -37,6 +37,6 @@ public class ClosableTag extends Tag {
 
     @Override
     public String toString() {
-        return "\n<"+super.tagName+super.tagProperty+">\n"+context+subTagContent+"\n</"+super.tagName+">";
+        return "\n<" + super.tagName + super.tagProperty+">" + context + subTagContent + "\n</" + super.tagName + ">";
     }
 }

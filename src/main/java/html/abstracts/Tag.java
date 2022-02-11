@@ -1,12 +1,14 @@
 package html.abstracts;
 
-import html.concretes.NullValueGenerator;
 import html.concretes.TagProperty;
 
 
 public abstract class Tag {
     protected String tagName;
     protected TagProperty tagProperty;
+
+    public Tag(){}
+
 
     public Tag(String tagName,TagProperty tagProperty){
         this.tagName=tagName;

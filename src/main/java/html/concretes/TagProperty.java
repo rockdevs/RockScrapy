@@ -11,6 +11,10 @@ public class TagProperty {
     }
 
 
+    public TagProperty(Map<String,String> properties){
+        this.properties = properties;
+    }
+
     public boolean hasProperty(){
         return !properties.isEmpty();
     }
